@@ -1,0 +1,70 @@
+DAEWORK
+=======
+
+C++ http daemon server framework library
+
+INSTALATION
+
+Building on Unix with git, gcc and autotools
+
+Home page for daewrok:
+  http://www.daework.com
+
+Prerequisites:
+	g++ (or another C++ compiler)
+        make
+        libmemcached (if you want to use Memcached module)
+
+If you want to use a not release tarball, you'll also need:
+	autoconf (autoreconf)
+	automake
+
+Make sure you have a complete libtool install, including libtoolize
+
+Github repo for daework:
+  https://github.com/fernancoder/DaeWork
+
+    $ git clone https://github.com/fernancoder/DaeWork.git
+
+This project is divided into a main module and several sub-modules that are compiled independently. Main module includes the DaeWork framework. Secondary modules provide access to services like mySql, MongoDB, Memcached or RabitMQ.
+
+To install DaeWork:
+
+    $ cd DaeWork
+
+Then 
+
+    $ ./configure
+    $ make
+    $ sudo make install
+
+To run the test program execute:
+
+    $ cd demo
+    $ test -c test.ini
+
+    Enter "http://localhost:2021/?action=test&name=your_name" URL in your browser
+
+To install a module, first you must display the available:
+
+    $ cd modules/
+    $ ls -l
+
+Then
+    $ cd [module-name] (example: "cd memecached")
+    $ make
+    $ sudo make install
+
+
+REFERENCE
+
+Coming soon
+
+LICENSE
+
+This software is licensed under GNU GPLv3:
+  https://github.com/fernancoder/DaeWork/blob/master/COPYING
+
+Copyright (c) 2013 Fernando Martin <fernancoder@gmail.com>
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

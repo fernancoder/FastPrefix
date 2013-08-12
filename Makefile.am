@@ -1,0 +1,1 @@
+SUBDIRS = datamanager csvimport src
