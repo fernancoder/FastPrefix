@@ -18,6 +18,9 @@ fastprefix_CXXFLAGS = -I$(top_srcdir)/datamanager
 fastprefix_LDADD = \
     ../datamanager/libdatamanager.a \
     -ldaework \
+    -ldwmmemcached \
+    -lmemcached \
+    -lmemcachedutil \
     -lpthread
 
 AM_LDFLAGS = -lpthread

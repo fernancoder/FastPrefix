@@ -9,8 +9,6 @@
 
 void FastPrefixServer::init()
 {
-	cout << "Inicio servidor " << endl;
-
 	this->dispatcherObject = (Dispatcher *)(new FastPrefixDispatcher());
 }
 

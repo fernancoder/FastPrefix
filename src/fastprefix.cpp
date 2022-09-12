@@ -66,7 +66,7 @@ int main (int argc, char **argv)
         strcpy(cfgFilePath, config_filename);
 
 
-    char *appEnv = getenv("APPLICATION_ENV");
+    const char *appEnv = getenv("APPLICATION_ENV");
     if ( appEnv == NULL )
         appEnv = "des";    
     

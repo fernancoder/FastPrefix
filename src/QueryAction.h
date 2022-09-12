@@ -11,6 +11,7 @@
 #include <daework-include.h>
 #include <daework-kernel.h>
 #include <daework-support.h>
+#include <DwmMemcached.h>
 #include "Tokenizer.h"
 #include "Ocurrence.h"
 #include "Record.h"
@@ -28,8 +29,12 @@ class QueryAction : public Action
 		void execute();
 
 	protected:
-		vector<OcurrenceInfo *> *executeQuery(string queryExpression);
-		string getData(vector<OcurrenceInfo *> *vctrOcurrenceInfo, int from, int size);
+		vector<OcurrenceInfo *> *executeQuery(vector<string> *tokens);
+		string getData(vector<OcurrenceInfo *> *vctrOcurrenceInfo, int from, int size, int *totalResults);
+		string getMemCachedData(string queryNormalized);
+		void setMemCachedData(string queryNormalized, string result);
+		string normalizeQuery(vector<string> *tokens);
+		void logAction(string queryExpression, int totalResults, bool isCached);
 
 		void deleteOcurrenceInfo(vector<OcurrenceInfo *> *vctrOcurrenceInfo);
 
